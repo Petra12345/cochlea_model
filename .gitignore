@@ -50,6 +50,9 @@ cmake-build-*/
 # IntelliJ
 out/
 
+#input
+.flac 
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 

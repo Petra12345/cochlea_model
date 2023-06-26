@@ -14,28 +14,31 @@ class BasilarMembrane(Transformation):
     # pylint: disable=invalid-name
 
     def __init__(self,
-                 channels: int = 700,
-                 a: int = 3500,
-                 alpha: float = 3.0,
-                 rho: float = 1.0,
-                 c: float = 3.5,
-                 c0: float = 10e8,
-                 de: float = 0.15,
-                 h: float = 0.1,
-                 m: float = 0.05):
+                 args,
+                 channels: int = 700):
         # Signature is given by model parameters
         # pylint: disable=too-many-arguments
+        # Parameters of BM
+        # channels = number of channels on BM
+        # a = 
+        # alpha = 
+        # rho = 
+        # c = 
+        # c0 = 
+        # de =
+        # h =
+        # m = 
 
         super().__init__()
         self.channels = channels
-        self.ch = np.linspace(0, c, self.channels)
-        self.a = a
-        self.alpha = alpha
-        self.rho = rho
-        self.c0 = c0
-        self.de = de
-        self.h = h
-        self.m = m
+        self.ch = np.linspace(0, args.bm_c, self.channels)
+        self.a = args.bm_a
+        self.alpha = args.bm_alpha
+        self.rho = args.bm_rho
+        self.c0 = args.bm_c0
+        self.de = args.bm_de
+        self.h = args.bm_h
+        self.m = args.bm_m
         self.r = self.de * np.sqrt(self.c0 * self.m)
 
     def _s(self, c):

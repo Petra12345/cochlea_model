@@ -15,21 +15,16 @@ class BushyCell(Transformation):
     # Model parameters have well-defined short names
     # pylint: disable=invalid-name
 
-    def __init__(self,
-                 n_convergence: int = 40,
-                 tau_mem: float = 1e-3,
-                 tau_syn: float = 5e-4,
-                 tau_refrac: float = 1e-3,
-                 weight: float = 13e3):
+    def __init__(self, args):
         # Signature is given by model parameters
         # pylint: disable=too-many-arguments
 
         super().__init__()
-        self.n_convergence = n_convergence
-        self.tau_mem = tau_mem
-        self.tau_syn = tau_syn
-        self.tau_refrac = tau_refrac
-        self.weight = weight / float(self.n_convergence)
+        self.n_convergence = args.bc_n_convergence
+        self.tau_mem = args.bc_tau_mem
+        self.tau_syn = args.bc_tau_syn
+        self.tau_refrac = args.bc_tau_refrac
+        self.weight = args.bc_weight / float(self.n_convergence)
 
     @staticmethod
     @numba.jit(nopython=True)

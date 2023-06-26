@@ -7,14 +7,16 @@ from lauscher.transformations import RmsNormalizer, HanningWindow, \
 
 class Wave2Spike(Transformation):
     def __init__(self,
+                 args,
                  num_channels: int):
         self.num_channels = num_channels
+        self.args = args
 
     def __call__(self, wave: MonoAudioWave) -> SpikeTrain:
         # noinspection PyTypeChecker
         return wave \
             .transform(RmsNormalizer(0.3)) \
             .transform(HanningWindow()) \
-            .transform(BasilarMembrane(channels=self.num_channels)) \
-            .transform(HairCell()) \
-            .transform(BushyCell())
+            .transform(BasilarMembrane(args=self.args, channels=self.num_channels)) \
+            .transform(HairCell(args=self.args)) \
+            .transform(BushyCell(args=self.args))

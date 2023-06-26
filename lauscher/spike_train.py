@@ -5,6 +5,7 @@ from pathlib import Path
 
 import numpy as np
 from matplotlib.axes import Axes
+import matplotlib.pyplot as plt
 
 from lauscher.abstract import Transformable, Exportable, Plottable
 
@@ -32,6 +33,8 @@ class SpikeTrain(Transformable, Exportable, Plottable):
 
         axis.set_xlabel("Time")
         axis.set_ylabel("Label")
+        # plt.savefig("spike_train_bma_7000.png")
+        plt.show()
 
     @classmethod
     def from_dense(cls, channel_time_matrix: np.ndarray,

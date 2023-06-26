@@ -12,29 +12,20 @@ from lauscher.membranevelocity import MembraneVelocity
 class HairCell(Transformation):
     # Model parameters have well-defined short names
     # pylint: disable=invalid-name
-    def __init__(self,
-                 y: float = 5.05,
-                 g: float = 2000.0,
-                 l: float = 2500.0,
-                 r: float = 6580.0,
-                 x: float = 66.3,
-                 a: float = 5.0,
-                 b: float = 300.0,
-                 h: float = 50000.0,
-                 m: float = 1.0):
+    def __init__(self, args):
         # Signature is given by model parameters
         # pylint: disable=too-many-arguments
 
         super().__init__()
-        self.y = y
-        self.g = g
-        self.l = l
-        self.r = r
-        self.x = x
-        self.a = a
-        self.b = b
-        self.h = h
-        self.m = m
+        self.y = args.hc_y
+        self.g = args.hc_g
+        self.l = args.hc_l
+        self.r = args.hc_r
+        self.x = args.hc_x
+        self.a = args.hc_a
+        self.b = args.hc_b
+        self.h = args.hc_h
+        self.m = args.hc_m
 
     def _meddis(self, bm, fs):
         # Equation length is given by the model.
