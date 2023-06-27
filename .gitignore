@@ -51,7 +51,11 @@ cmake-build-*/
 out/
 
 #input
-.flac 
+audio/
+small_dataset/
+
+# results
+Results/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
