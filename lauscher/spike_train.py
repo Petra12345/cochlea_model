@@ -28,12 +28,13 @@ class SpikeTrain(Transformable, Exportable, Plottable):
         np.savez(path, self._data)
 
     def plot(self, axis: Axes):
+        print("number of spikes", len(self.spike_times))
         axis.plot(self.spike_times, self.spike_labels,
                   ls="none", marker=".", color="black")
 
         axis.set_xlabel("Time")
         axis.set_ylabel("Label")
-        # plt.savefig("spike_train_bma_7000.png")
+        plt.savefig("spike_train_hc_b_400.png")
         plt.show()
 
     @classmethod

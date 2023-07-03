@@ -29,6 +29,7 @@ class HairCell(Transformation):
 
     def _meddis(self, bm, fs):
         # Equation length is given by the model.
+        # fs = sample rate
         # pylint: disable=too-many-locals
 
         # initialize inner hair cells

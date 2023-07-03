@@ -48,55 +48,55 @@ if __name__ == "__main__":
     # Model parameters
     # BM model 
     parser.add_argument("--bm_channels", type=int, default=700,
-                        help="Number of frequency selective channels in the BM.")
+                        help="Number of frequency selective channels in the BM.")   #???
     parser.add_argument("--bm_a", type=int, default=3500,
-                        help="EXPL.")
+                        help="Greenwoods constant.")
     parser.add_argument("--bm_alpha", type=float, default=3.0,
-                        help="EXPL.")
+                        help="Attenuation factor.")
     parser.add_argument("--bm_rho", type=float, default=1.0,
-                        help="EXPL.")
+                        help="Parameter in deriv of velocity.")
     parser.add_argument("--bm_c", type=float, default=3.5,
                         help="EXPL.")
     parser.add_argument("--bm_c0", type=float, default=10e8,
-                        help="EXPL.")
+                        help="Stiffness constant.")
     parser.add_argument("-bm_de", type=float, default=0.15,
                         help="EXPL.")
     parser.add_argument("--bm_h", type=float, default=0.1,
-                        help="EXPL.")
+                        help="Height of scaling.")
     parser.add_argument("--bm_m", type=float, default=0.05,
-                        help="EXPL.")
+                        help="Effective mass.")
     
     # HC model
     parser.add_argument("--hc_y", type=float, default=5.05,
-                        help="EXPL.")
+                        help="Replenishing rate.")
     parser.add_argument("--hc_g", type=float, default=2000.0,
-                        help="EXPL.")
+                        help="Max. permeability.")
     parser.add_argument("--hc_l", type=float, default=2500.0,
-                        help="EXPL.")
+                        help="Loss rate.")
     parser.add_argument("--hc_r", type=float, default=6580.0,
-                        help="EXPL.")
+                        help="Reuptake rate.")
     parser.add_argument("--hc_x", type=float, default=66.3,
                         help="EXPL.")
     parser.add_argument("--hc_a", type=float, default=5.0,
-                        help="EXPL.")
+                        help="Permeability offset.")
     parser.add_argument("--hc_b", type=float, default=300.0,
-                        help="EXPL.")
+                        help="Permeability rate.")
     parser.add_argument("--hc_h", type=float, default=50000.0,
-                        help="EXPL.")
+                        help="Probability scaling.")
     parser.add_argument("--hc_m", type=float, default=1.0,
                         help="EXPL.")
     
     # BC model
     parser.add_argument("--bc_n_convergence", type=int, default=40,
-                        help="EXPL.")
+                        help="Number of hair cells per BM measuring point?.")
     parser.add_argument("--bc_tau_mem", type=float, default=1e-3,
-                        help="EXPL.")
+                        help="Membrane time constant.")
     parser.add_argument("--bc_tau_syn", type=float, default=5e-4,
-                        help="EXPL.")
+                        help="Synapse time constant.")
     parser.add_argument("--bc_tau_refrac", type=float, default=1e-3,
-                        help="EXPL.")
+                        help="Refractory period time constant.")
     parser.add_argument("--bc_weight", type=float, default=13e3,
-                        help="EXPL.")
+                        help="weights to the bc.")
     
     
     args = parser.parse_args()
@@ -124,4 +124,4 @@ for filename in os.listdir(small_dataset_folder):
 
     # global_args = CommandLineArguments()
     # global_args.num_concurrent_jobs = args.jobs
-    # main(args, args.input_file, args.output_file, args.num_channels)
+# main(args, args.input_file, args.output_file, args.num_channels)

@@ -53,9 +53,12 @@ out/
 #input
 audio/
 small_dataset/
+og_data/
 
 # results
 Results/
+*.npy
+*.npz
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
